@@ -25,9 +25,10 @@ function startGame() {
   //initialize game variables  
   progress = 0;
   gamePlaying = true;
-  tries = 3;
   clueHoldTime = 1000
-
+  tries = 3;
+  document.getElementById("trialTracker").innerHTML = tries;
+  document.getElementById("trialTracker").style.color = "white";
   // swap the Start and Stop buttons
   document.getElementById("startBtn").classList.add("hidden");
   document.getElementById("stopBtn").classList.remove("hidden");
@@ -38,6 +39,9 @@ function startGame() {
 
 function stopGame() {
   gamePlaying = false;
+  tries = 3;
+  document.getElementById("trialTracker").innerHTML = tries;
+  document.getElementById("trialTracker").style.color = "white";
   // swap the Start and Stop buttons back
   document.getElementById("startBtn").classList.remove("hidden");
   document.getElementById("stopBtn").classList.add("hidden");
@@ -150,6 +154,8 @@ function guess(btn){
       loseGame();
     }else{
       tries--;
+      document.getElementById("trialTracker").innerHTML = tries;
+      document.getElementById("trialTracker").style.color = "red";
       alert("You have "+ tries + " tries left! Think carefully! What's the next button in the pattern?");
     }
   }

@@ -20,6 +20,12 @@ h1{
   font-family: verdana, arial, sans-serif; 
 }
 
+#trialLabel{
+  height: 40%;
+  width: 40%;
+  margin: 0 0 0 30%;
+}
+
 button{
   padding: 10px;
   border-radius: 10px;
@@ -65,4 +71,18 @@ button{
 
 #button4:active, #button4.lit {
     background:yellow;
+}
+#button5 {
+    background: #C4A484;
+}
+
+#button5:active, #button5.lit {
+    background:	#D2691E;
+}
+#button6 {
+    background: #CBC3E3;
+}
+
+#button6:active, #button6.lit {
+    background:#9932CC;
 }
