@@ -15,9 +15,9 @@ var clueHoldTime = 1000; //how long to hold each clue's light/sound
 
 function generatePattern(){ //Generates a random pattern
   var min = Math.ceil(1);
-  var max = Math.floor(5);
+  var max = Math.floor(7);
   for (let i = 0; i <= patternSize-1; i++) {
-    pattern[i] = Math.floor(Math.random(1,5) * (max - min) + min);
+    pattern[i] = Math.floor(Math.random() * (max - min) + min);
   }
 }
 
@@ -49,6 +49,8 @@ const freqMap = {
   2: 329.6,
   3: 392,
   4: 466.2,
+  5: 520,
+  6: 620.7,
 };
 function playTone(btn, len) {
   o.frequency.value = freqMap[btn];
