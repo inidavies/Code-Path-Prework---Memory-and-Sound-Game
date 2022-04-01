@@ -1,11 +1,12 @@
 // global constants
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
-const pattern = [];//2, 3, 4, 4, 3, 1, 2, 2];
+const pattern = [];
 const patternSize = 8;
 
 //Global Variables
 var progress = 0;
+var tries = 3;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; //must be between 0.0 and 1.0
@@ -21,8 +22,10 @@ function generatePattern(){ //Generates a random pattern
 }
 
 function startGame() {
-  //initialize game variables  progress = 0;
+  //initialize game variables  
+  progress = 0;
   gamePlaying = true;
+  tries = 3;
   clueHoldTime = 1000
 
   // swap the Start and Stop buttons
@@ -141,6 +144,12 @@ function guess(btn){
     }
   } 
   else{
-    loseGame();
+    if(tries == 0){
+      loseGame();
+    }else{
+      tries--;
+      alert("You have "+ tries + " tries left! Think carefully! What's the next button in the pattern?");
+    }
   }
+
 }
