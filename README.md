@@ -2,11 +2,11 @@
 
 **Memory Game** is a Light & Sound Memory game to apply for CodePath's SITE Program. 
 
-Submitted by: **NAME**
+Submitted by: **Inioluwa Davies**
 
-Time spent: **#** hours spent in total
+Time spent: **20** hours spent in total
 
-Link to project: (insert your link here, should start with https://glitch.com...)
+Link to project: (https://glitch.com/edit/#!/enshrined-spiny-lumber?path=script.js%3A128%3A3)
 
 ## Required Functionality
 
@@ -42,12 +42,13 @@ If you recorded multiple GIFs for all the implemented features, you can add them
 ![](https://i.imgur.com/IySyrFd.gif)
 ![](https://i.imgur.com/iUFw4h5.gif)
 ![](https://i.imgur.com/sGovCiP.gif)
+![](https://i.imgur.com/tNQ715p.gif)
 
 
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random]
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random, https://www.w3schools.com/cssref/pr_border.asp]
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
 [I encountered some challenges trying to format images and toggling between hiding and displaying them. At first, my issue was making the images uniform so they were all properly sized on each button. To tackle this, I did some trial and error with the width, height, and margins, of the images until I found the optimal dimensions.
@@ -64,7 +65,9 @@ When it comes to updating web game software, what are some of the practices used
 ]
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+[If I had more time I would work on adding different levels to the game. Level one would be the regular color and sound game, level two would ask the user to match the image and sound clues, the third level would be a timed version of level two, and the fourth level would have the user match a mix of colored buttons and images (instead of just one or the other )within a time limit. The final level would have distractions where after a randomly generated time interval, a "distraction" button would be played to throw the player off.
+
+Another modification I would make is to refactor the startGame and stopGame functions. I would combine them into one gameState function that either starts or stops the game depending on the value of a boolean function that is determined by what button is pressed (start or stop). I would do the same with the other function pairs lightButton and clearButton as well as loseGame and winGame.]
 
 
 
