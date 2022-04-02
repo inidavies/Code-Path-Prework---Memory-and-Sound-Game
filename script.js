@@ -13,19 +13,20 @@ var volume = 0.5; //must be between 0.0 and 1.0
 var guessCounter = 0;
 var clueHoldTime = 1000; //how long to hold each clue's light/sound
 
-function generatePattern(){ //Generates a random pattern
+function generatePattern() {
+  //Generates a random pattern
   var min = Math.ceil(1);
   var max = Math.floor(7);
-  for (let i = 0; i <= patternSize-1; i++) {
+  for (let i = 0; i <= patternSize - 1; i++) {
     pattern[i] = Math.floor(Math.random() * (max - min) + min);
   }
 }
 
 function startGame() {
-  //initialize game variables  
+  //initialize game variables
   progress = 0;
   gamePlaying = true;
-  clueHoldTime = 1000
+  clueHoldTime = 1000;
   tries = 3;
   document.getElementById("trialTracker").innerHTML = tries;
   document.getElementById("trialTracker").style.color = "white";
@@ -92,9 +93,11 @@ o.start(0);
 
 function lightButton(btn) {
   document.getElementById("button" + btn).classList.add("lit");
+  document.getElementById("image" + btn).classList.remove("hidden");
 }
 function clearButton(btn) {
   document.getElementById("button" + btn).classList.remove("lit");
+  document.getElementById("image" + btn).classList.add("hidden");
 }
 
 function playSingleClue(btn) {
@@ -106,7 +109,7 @@ function playSingleClue(btn) {
 }
 
 function playClueSequence() {
-  guessCounter = 0; 
+  guessCounter = 0;
   clueHoldTime -= 100;
   context.resume();
   let delay = nextClueWaitTime; //set delay to initial wait time
@@ -119,45 +122,45 @@ function playClueSequence() {
   }
 }
 
-function loseGame(){
+function loseGame() {
   stopGame();
   alert("Game Over. You lost.");
 }
 
-function winGame(){
+function winGame() {
   stopGame();
   alert("Game Over. You win!");
 }
 
-function guess(btn){
+function guess(btn) {
   console.log("user guessed: " + btn);
-  if(!gamePlaying){
+  if (!gamePlaying) {
     return;
   }
-  
-  if(pattern[guessCounter] == btn){
-    if(guessCounter == progress){
-      if(progress == pattern.length - 1){
+
+  if (pattern[guessCounter] == btn) {
+    if (guessCounter == progress) {
+      if (progress == pattern.length - 1) {
         winGame();
-      }
-      else{
+      } else {
         progress++;
         playClueSequence();
       }
-    }
-    else{
+    } else {
       guessCounter++;
     }
-  } 
-  else{
-    if(tries == 0){
+  } else {
+    if (tries == 0) {
       loseGame();
-    }else{
+    } else {
       tries--;
       document.getElementById("trialTracker").innerHTML = tries;
       document.getElementById("trialTracker").style.color = "red";
-      alert("You have "+ tries + " tries left! Think carefully! What's the next button in the pattern?");
+      alert(
+        "You have " +
+          tries +
+          " tries left! Think carefully! What's the next button in the pattern?"
+      );
     }
   }
-
 }
