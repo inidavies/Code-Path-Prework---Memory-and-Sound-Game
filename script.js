@@ -13,6 +13,12 @@ var volume = 0.5; //must be between 0.0 and 1.0
 var guessCounter = 0;
 var clueHoldTime = 1000; //how long to hold each clue's light/sound
 
+function showImage(btn){
+  while(document.getElementById("button"+ btn).style.background != "green"){
+    document.getElementById("image" + btn).classList.add("hidden");
+  }
+}
+
 function generatePattern() {
   //Generates a random pattern
   var min = Math.ceil(1);
@@ -93,11 +99,11 @@ o.start(0);
 
 function lightButton(btn) {
   document.getElementById("button" + btn).classList.add("lit");
-  document.getElementById("image" + btn).classList.remove("hidden");
+  document.getElementById("image" + btn).classList.add("hidden");
 }
 function clearButton(btn) {
   document.getElementById("button" + btn).classList.remove("lit");
-  document.getElementById("image" + btn).classList.add("hidden");
+  document.getElementById("image" + btn).classList.remove("hidden");
 }
 
 function playSingleClue(btn) {

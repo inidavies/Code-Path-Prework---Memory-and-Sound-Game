@@ -57,6 +57,7 @@ img {
 #button1:active,
 #button1.lit {
   background: green;
+  border: 10px solid black;
 }
 
 #button2 {
@@ -74,6 +75,7 @@ img {
 #button2:active,
 #button2.lit {
   background: blue;
+  border: 10px solid black;
 }
 
 #button3 {
@@ -90,6 +92,7 @@ img {
 #button3:active,
 #button3.lit {
   background: red;
+  border: 10px solid black;
 }
 
 #button4 {
@@ -106,6 +109,7 @@ img {
 #button4:active,
 #button4.lit {
   background: yellow;
+  border: 10px solid black;
 }
 #button5 {
   background: #c4a484;
@@ -121,6 +125,7 @@ img {
 #button5:active,
 #button5.lit {
   background: #d2691e;
+  border: 10px solid black;
 }
 #button6 {
   background: #cbc3e3;
@@ -129,4 +134,5 @@ img {
 #button6:active,
 #button6.lit {
   background: #9932cc;
+  border: 10px solid black;
 }
